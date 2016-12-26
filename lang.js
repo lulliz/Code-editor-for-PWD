@@ -45,18 +45,11 @@ $(document).ready(function() {
                 editor.getSession().setValue(str);
                 editor.renderer.updateFull();
             },
-            'вверх': function() { 
-                editor.navigateUp(1);
-            },
-            'вниз': function() { 
-                editor.navigateDown(1);
-            },
-            'право': function() { 
-                editor.navigateRight(1);
-            },
-            'лево': function() { 
-                editor.navigateLeft(1);
-            },
+            'верх *stepsUp': calcStepsUp,
+            'вниз *stepsDown': calcStepsDown,
+            'лево *stepsLeft': calcStepsLeft,
+            'право *stepsRight': calcStepsRight,
+            'перейти на *row строку *col столбец':calcRowCol,
             'файл стилей': function() {
                 addText('<link href="styles.css" rel="stylesheet">');
             },
@@ -156,3 +149,22 @@ else if (window.matchMedia("(max-width: 1920px)").matches) {
     editor.getSession().setWrapLimitRange(0, 140);
 }
 else {}
+
+/* calc steps Up, Down, Left, Right by user say!*/
+var calcStepsUp = function(stepsUp) {
+    editor.navigateUp(stepsUp);
+}
+var calcStepsDown = function(stepsDown) {
+    editor.navigateDown(stepsDown);
+    console.log(stepsDown); /* sometimes have strange bag - cursor ignore number & go full down.*/
+}
+var calcStepsLeft = function(stepsLeft) {
+    editor.navigateLeft(stepsLeft);
+}
+var calcStepsRight = function(stepsRight) {
+    editor.navigateRight(stepsRight);
+}
+
+var calcRowCol = function(row,col) {
+    editor.gotoLine(row,col,true);
+}
