@@ -4,6 +4,8 @@ editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/html");
 editor.setOption("showPrintMargin", false);
 editor.setFontSize("16px");
+editor.getSession().setUseWrapMode(true);
+
 
 $(document).ready(function() {
     if (annyang) {
@@ -139,3 +141,18 @@ steps: [
     <div class='popover-content'></div>\
   </div>",
 });
+
+/* wrap word media query*/
+if (window.matchMedia("(max-width: 1280px)").matches) {
+    editor.getSession().setWrapLimitRange(0, 40);
+} 
+else if (window.matchMedia("(max-width: 1366px)").matches)  {
+  editor.getSession().setWrapLimitRange(0, 50);
+}
+else if (window.matchMedia("(max-width: 1600px)").matches) {
+    editor.getSession().setWrapLimitRange(0, 100);
+}
+else if (window.matchMedia("(max-width: 1920px)").matches) {
+    editor.getSession().setWrapLimitRange(0, 140);
+}
+else {}
