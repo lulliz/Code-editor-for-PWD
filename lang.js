@@ -14,6 +14,17 @@ $(document).ready(function() {
         }
         annyang.setLanguage('ru');
         var commands = {
+            'переключить язык на английский': function() {
+                annyang.setLanguage('en-US');
+            },
+            'switch language to russian': function() {
+                annyang.setLanguage('ru');
+            },
+            'слово *wordRu': calcWordRu,
+            'say *wordEn': calcWordEn,
+            'слово дерево': function() {
+                addText('дерево');
+            },
             'открыть инструкцию': function() {
                 localStorage.clear();
                 tour.init();
@@ -82,7 +93,7 @@ $(document).ready(function() {
                 addText('\n');
             },
             'старт':function(){
-                addText('<!DOCTYPE html>\n<html>\n    <head>\n       <title></title>\n    </head>\n    <body>\n        <p>Hello</p>\n');
+                addText('<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset="utf-8">\n        <title></title>\n    </head>\n    <body>\n        <p>Hello</p>\n');
                 addText('    </body>\n</html>');
                 editor.gotoLine(7); 
                 editor.navigateLineEnd();
@@ -99,14 +110,14 @@ function showHTML() {
     $('#return').html(editor.getValue());
 }
 function showHTMLInIFrame() {
-    $('#return').html("<iframe src=" + "data:text/html," + encodeURIComponent(editor.getValue()) + "></iframe>");
+    $('#return').html("<iframe seamless src=" + "data:text/html," + encodeURIComponent(editor.getValue()) + "></iframe>");
 }
 editor.on("input", showHTMLInIFrame);
 
 
 /* Step-by-step the tour */
 var tour = new Tour({
-steps: [
+    steps: [
     {
         element: "#editor",
         title: "Привет дорогой друг :)",
@@ -127,12 +138,12 @@ steps: [
         content: "В этой же части будет отображаться весь твой сайт, каким его видит браузер - то есть в готовом виде!",
         duration: 10000
     }
-],
- template: "<div class='popover tour'>\
+    ],
+    template: "<div class='popover tour'>\
     <div class='arrow'></div>\
     <h3 class='popover-title'></h3>\
     <div class='popover-content'></div>\
-  </div>",
+    </div>",
 });
 
 /* wrap word media query*/
@@ -150,7 +161,7 @@ else if (window.matchMedia("(max-width: 1920px)").matches) {
 }
 else {}
 
-/* calc steps Up, Down, Left, Right by user say!*/
+    /* calc steps Up, Down, Left, Right by user say!*/
 var calcStepsUp = function(stepsUp) {
     editor.navigateUp(stepsUp);
 }
@@ -167,4 +178,14 @@ var calcStepsRight = function(stepsRight) {
 
 var calcRowCol = function(row,col) {
     editor.gotoLine(row,col,true);
+}
+
+var calcWordRu = function(wordRu) {
+    editor.insert(wordRu);
+    console.log(wordRu);
+}
+
+var calcWordEn = function(wordEn) {
+    editor.insert(wordEn);
+    console.log(wordEn);
 }
