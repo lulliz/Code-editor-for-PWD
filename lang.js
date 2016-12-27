@@ -61,9 +61,6 @@ $(document).ready(function() {
             'лево *stepsLeft': calcStepsLeft,
             'право *stepsRight': calcStepsRight,
             'перейти на *row строку *col столбец':calcRowCol,
-            'файл стилей': function() {
-                addText('<link href="styles.css" rel="stylesheet">');
-            },
             'текст': function() {
                 addText('<p></p>');
             },
@@ -93,7 +90,7 @@ $(document).ready(function() {
                 addText('\n');
             },
             'старт':function(){
-                addText('<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset="utf-8">\n        <title></title>\n    </head>\n    <body>\n        <p>Hello</p>\n');
+                addText('<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset="utf-8">\n        <title></title>\n        <style></style>\n    </head>\n    <body>\n        <p>Hello</p>\n');
                 addText('    </body>\n</html>');
                 editor.gotoLine(7); 
                 editor.navigateLineEnd();
@@ -109,10 +106,7 @@ $(document).ready(function() {
 function showHTML() {
     $('#return').html(editor.getValue());
 }
-function showHTMLInIFrame() {
-    $('#return').html("<iframe seamless src=" + "data:text/html," + encodeURIComponent(editor.getValue()) + "></iframe>");
-}
-editor.on("input", showHTMLInIFrame);
+editor.on("input", showHTML);
 
 
 /* Step-by-step the tour */
