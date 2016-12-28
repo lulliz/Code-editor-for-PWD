@@ -36,15 +36,30 @@ $(document).ready(function() {
             'энтер': function() {
                 addText('\n');
             },
+            'enter': function() {
+                addText('\n');
+            },
             'таб': function() {
                 addText('    ');
             }, 
+            'tab': function() {
+                addText('    ');
+            },
             'пробел': function() {
                 addText(' ');
-            }, 
+            },
+            'space': function() {
+                addText(' ');
+            },  
+            'удалить': function() {
+                /* I don't know how this made...*/
+            },
             'отменить': function() { 
                 editor.undo();
-            }, 
+            },
+            'cancel': function() { 
+                editor.undo();
+            },
             'вернуть': function() { 
                 editor.redo();
             },
@@ -78,6 +93,25 @@ $(document).ready(function() {
             },
             'айди': function() {
                 addText('id=""');
+            },
+            'решетка': function() {
+                addText('#');
+            },
+            'точка': function() {
+                addText('.');
+            },
+            'запятая': function() {
+                addText(',');
+            },
+            'восклицательный знак': function() {
+                addText('!');
+            },
+            'вопросительный знак': function() {
+                addText('?');
+            },
+            'стиль скобки': function() {
+                addText('{');
+                addText('\n');
             },
             'блок класс':function(){
                 addText('<div class=""');
