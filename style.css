@@ -37,6 +37,10 @@ h1 {
     height: 100%;
 }
 
+#return {
+    background: #fff;
+}
+
 iframe {
     border: none;
     width: 100%;
