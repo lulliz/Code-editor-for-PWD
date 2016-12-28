@@ -6,6 +6,7 @@ editor.setOption("showPrintMargin", false);
 editor.setFontSize("16px");
 editor.getSession().setUseWrapMode(true);
 
+$("#success-alert").hide(); /* lang alert*/
 
 $(document).ready(function() {
     if (annyang) {
@@ -16,9 +17,17 @@ $(document).ready(function() {
         var commands = {
             'переключить язык на английский': function() {
                 annyang.setLanguage('en-US');
+                $("#success-alert").alert();
+                $("#success-alert").fadeTo(1000, 500).slideUp(500, function(){
+                    $("#success-alert").slideUp(500);
+                });  
             },
             'switch language to russian': function() {
                 annyang.setLanguage('ru');
+                $("#success-alert").alert();
+                $("#success-alert").fadeTo(2000, 500).slideUp(500, function(){
+                    $("#success-alert").slideUp(500);
+                });
             },
             'слово *wordRu': calcWordRu,
             'say *wordEn': calcWordEn,

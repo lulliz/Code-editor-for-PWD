@@ -41,6 +41,12 @@ h1 {
     background: #fff;
 }
 
+.alert {
+    position: fixed;
+    top: 0;
+    left: 45%;
+}
+
 iframe {
     border: none;
     width: 100%;
