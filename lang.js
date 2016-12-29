@@ -5,6 +5,7 @@ editor.getSession().setMode("ace/mode/html");
 editor.setOption("showPrintMargin", false);
 editor.setFontSize("16px");
 editor.getSession().setUseWrapMode(true);
+editor.$blockScrolling = Infinity;
 
 $("#success-alert").hide(); /* lang alert*/
 
@@ -154,7 +155,6 @@ function showHTML() {
     doc.open();
     doc.write(editor.getValue());
     doc.close();
-    console.log(editor.getValue());
 }
 editor.on("input", showHTML);
 
@@ -183,12 +183,10 @@ var tour = new Tour({
         duration: 10000
     },
     {
-        element: "h1",
+        element: "#editor",
         title: "Много-много команд!",
         backdrop: true,
         smartPlacement: true,
-        backdropContainer: 'body',
-        backdropPadding: 5,
         content: "Когда это окно закроется - произнеси фразу: \n 'Открыть подсказки' \n И увидишь все возможности этого редактора. \n Желаю успехов! ",
         duration: 12000
     }
@@ -236,12 +234,10 @@ var calcRowCol = function(row,col) {
 
 var calcWordRu = function(wordRu) {
     editor.insert(wordRu);
-    console.log(wordRu);
 }
 
 var calcWordEn = function(wordEn) {
     editor.insert(wordEn);
-    console.log(wordEn);
 }
 
 /* hot-key panel*/
@@ -251,4 +247,27 @@ function openNav() {
 
 function closeNav() {
     $("#hotkey").width("0");
+}
+
+
+/* chrome only */
+    // Opera 8.0+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    // Firefox 1.0+
+var isFirefox = typeof InstallTrigger !== 'undefined';
+    // At least Safari 3+: "[object HTMLElementConstructor]"
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    // Internet Explorer 6-11
+var isIE = /*@cc_on!@*/false || !!document.documentMode;
+    // Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+    // Chrome 1+
+var isChrome = !!window.chrome && !!window.chrome.webstore;
+    // Blink engine detection
+var isBlink = (isChrome || isOpera) && !!window.CSS;
+
+if (isChrome==true) {}
+else {
+    console.log("Nea, ne wokr!");
+    $('body').html('<h1>Извини, дорогой друг!</h1><h1>Данный сайт работает только в Google Chrome!</h1><h1><a href="https://www.google.ru/chrome/browser/desktop/">Вот тут скачать можно :)</a></h1>');
 }

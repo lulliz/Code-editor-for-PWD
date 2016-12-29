@@ -57,7 +57,7 @@ iframe {
     height: 90%;
 }
 
-.full span {
+#spancenter {
     font-size: 14px;
     font-style: italic;
     display: block;
