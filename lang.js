@@ -147,7 +147,11 @@ $(document).ready(function() {
 
 /* Preview code*/
 function showHTML() {
-    $('#return').html(editor.getValue());
+    var doc = document.getElementById('framelive').contentWindow.document;
+    doc.open();
+    doc.write(editor.getValue());
+    doc.close();
+    console.log(editor.getValue());
 }
 editor.on("input", showHTML);
 
