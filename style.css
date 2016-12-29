@@ -57,6 +57,14 @@ iframe {
     height: 90%;
 }
 
+.full span {
+    font-size: 14px;
+    font-style: italic;
+    display: block;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 .fill { 
     min-height: 100%;
     height: 100%;
@@ -66,6 +74,7 @@ iframe {
     height: 100%;
 }
 
+/* scroll*/
 ::-webkit-scrollbar-track
 {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -91,6 +100,55 @@ iframe {
     border-radius: 6px;
 }
 
+/* hotkey*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background-color: #f7f7f7;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align:center;
+}
+
+.sidenav kbd {
+    padding: 8px;
+    font-size: 16px;
+    color: #818181;
+
+}
+
+.sidenav p {
+    padding: 5px;
+    font-size: 15px;
+    color: #818181;
+    text-align: left;
+    margin-left: 12px;
+}
+
+.tright p {
+    text-align: right;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* media */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav p {font-size: 18px;}
+}
+
+
 @media only screen and (max-width: 960px) {
     body {
         overflow-y: scroll;
@@ -98,37 +156,37 @@ iframe {
 }
 
 @media  screen and (min-width: 1280px) and (max-width: 1365px) {
-    .container {
+    .fill {
         width: 1200px;
     }
 }
 
 @media  screen and (min-width: 1366px) and (max-width: 1439px) {
-    .container {
+    .fill {
         width: 1300px;
     }
 }
  
 @media  screen and (min-width: 1440px) and (max-width: 1599px) {
-    .container {
+    .fill {
         width: 1400px;
     }
 }
 
 @media  screen and (min-width: 1600px) and (max-width: 1919px) {
-    .container {
+    .fill {
         width: 1550px;
     }
 }
 
 @media  screen and (min-width: 1920px) and (max-width: 1921px) {
-    .container {
+    .fill {
         width: 1860px;
     }
 }
 
 @media  screen and (min-width: 2550px) and (max-width: 3000px) {
-    .container {
+    .fill {
         width: 2500px;
     }
 }

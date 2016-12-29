@@ -31,8 +31,11 @@ $(document).ready(function() {
             },
             'слово *wordRu': calcWordRu,
             'say *wordEn': calcWordEn,
-            'слово дерево': function() {
-                addText('дерево');
+            'открыть подсказки': function() {
+                openNav();
+            },
+            'закрыть подсказки': function() {
+                closeNav();
             },
             'открыть инструкцию': function() {
                 localStorage.clear();
@@ -178,6 +181,16 @@ var tour = new Tour({
         backdropPadding: 5,
         content: "В этой же части будет отображаться весь твой сайт, каким его видит браузер - то есть в готовом виде!",
         duration: 10000
+    },
+    {
+        element: "h1",
+        title: "Много-много команд!",
+        backdrop: true,
+        smartPlacement: true,
+        backdropContainer: 'body',
+        backdropPadding: 5,
+        content: "Когда это окно закроется - произнеси фразу: \n 'Открыть подсказки' \n И увидишь все возможности этого редактора. \n Желаю успехов! ",
+        duration: 12000
     }
     ],
     template: "<div class='popover tour'>\
@@ -229,4 +242,13 @@ var calcWordRu = function(wordRu) {
 var calcWordEn = function(wordEn) {
     editor.insert(wordEn);
     console.log(wordEn);
+}
+
+/* hot-key panel*/
+function openNav() {
+    $("#hotkey").width("100%");
+}
+
+function closeNav() {
+    $("#hotkey").width("0");
 }
