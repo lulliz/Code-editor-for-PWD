@@ -117,9 +117,9 @@ iframe {
 }
 
 .sidenav kbd {
-    padding: 8px;
+    padding: 4px;
     font-size: 16px;
-    color: #818181;
+    color: #f7f7f7;
 
 }
 
@@ -172,22 +172,36 @@ iframe {
     .fill {
         width: 1400px;
     }
+    .full2 {
+        width: 1350px;   
+    }
 }
 
 @media  screen and (min-width: 1600px) and (max-width: 1919px) {
     .fill {
         width: 1550px;
     }
+    .full2 {
+        width: 1500px;   
+    }
 }
 
-@media  screen and (min-width: 1920px) and (max-width: 1921px) {
+@media  screen and (min-width: 1920px) and (max-width: 2420px) {
     .fill {
         width: 1860px;
+    }
+    .full2 {
+        width: 1800px; 
+        font-size: 1.15em;  
     }
 }
 
 @media  screen and (min-width: 2550px) and (max-width: 3000px) {
     .fill {
         width: 2500px;
+    }
+    .full2 {
+        width: 2400px;  
+        font-size: 1.5em; 
     }
 }

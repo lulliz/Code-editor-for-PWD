@@ -28,29 +28,135 @@
         </div>
         <div class="alert alert-success" id="success-alert">Язык переключён!</div>
         <div id="hotkey" class="sidenav">
-            <div class="container">
+            <div class="container full2">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                        <p>Смена языка (En) - <kbd>переключить язык на английский</kbd></p>
-                        <p>Смена языка (Ru) - <kbd>switch language to russian</kbd></p>
-                        <p>Любое слово или текст - <kbd>слово {Ваше слово}</kbd></p>
-                        <p>Любое слово или текст на английском - <kbd>say {Ваше слово En}</kbd></p>
-                        <p>Новая строка - <kbd>энтер</kbd></p>
-                        <p>Новая строка (En) - <kbd>enter</kbd></p>
-                        <p>Табуляция - <kbd>таб</kbd></p>
-                        <p>Табуляция (En) - <kbd>tab</kbd></p>
-                        <p>Пробел - <kbd>пробел</kbd></p>
-                        <p>Пробел (En) - <kbd>space</kbd></p>
+                        <table class="table table-striped text-left">
+                            <thead>
+                                <tr>
+                                    <th>Описание</th>
+                                    <th>Команда</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Смена языка</td>
+                                    <td><kbd>переключить язык на английский</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Смена языка (En)</td>
+                                    <td><kbd>switch language to russian</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Любое слово или текст</td>
+                                    <td><kbd>слово {Ваше слово}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Любое слово или текст (En)</td>
+                                    <td><kbd>say {Ваше слово}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Новая строка</td>
+                                    <td><kbd>энтер</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Новая строка (En)</td>
+                                    <td><kbd>enter</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Табуляция</td>
+                                    <td><kbd>таб</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Табуляция (En)</td>
+                                    <td><kbd>tab</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Пробел</td>
+                                    <td><kbd>пробел</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Пробел (En)</td>
+                                    <td><kbd>space</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Вставка тега &lt;p&gt;</td>
+                                    <td><kbd>текст</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Вставка тега &lt;a&gt;</td>
+                                    <td><kbd>ссылка</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Вставка тега &lt;section&gt;</td>
+                                    <td><kbd>секция</kbd></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 tright">
-                        <p><kbd>открыть подсказки</kbd> - Показать все голосовые команды</p>
-                        <p><kbd>закрыть подсказки</kbd> - Скрыть все голосовые команды</p>
-                        <p><kbd>открыть инструкцию</kbd> - Начать инструктаж</p>
-                        <p><kbd>закрыть инструкцию</kbd> - Завершить инструктаж</p>
-                        <p><kbd>отменить</kbd> - Шаг назад (ctrl+z)</p>
-                        <p><kbd>cancel</kbd> - Шаг назад (ctrl+z)  (En)</p>
-                        <p><kbd>сохранить</kbd> - Сохранение в localStorage </p>
-                        <p><kbd>загрузить</kbd> - Загрузка из localStorage </p>
+                        <table class="table table-striped text-left">
+                            <thead>
+                                <tr>
+                                    <th>Описание</th>
+                                    <th>Команда</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Показать все голосовые команды</td>
+                                    <td><kbd>открыть подсказки</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Скрыть все голосовые команды</td>
+                                    <td><kbd>закрыть подсказки</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Начать инструктаж</td>
+                                    <td><kbd>открыть инструкцию</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Завершить инструктаж</td>
+                                    <td><kbd>закрыть инструкцию</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Шаг назад (ctrl+z)</td>
+                                    <td><kbd>отменить</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Шаг назад (ctrl+z) (En)</td>
+                                    <td><kbd>cancel</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Сохранение в localStorage</td>
+                                    <td><kbd>сохранить</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Загрузить из localStorage</td>
+                                    <td><kbd>загрузить</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Передвинуть курсор вверх на ... шагов</td>
+                                    <td><kbd>вверх {число}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Передвинуть курсор вниз на ... шагов</td>
+                                    <td><kbd>вниз {число}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Передвинуть курсор влево на ... шагов</td>
+                                    <td><kbd>лево {число}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Передвинуть курсор вправо на ... шагов</td>
+                                    <td><kbd>право {число}</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td>Передвинуть курсор на ... строку ... столбец</td>
+                                    <td><kbd>перейти на *row строку *col столбец</kbd></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
