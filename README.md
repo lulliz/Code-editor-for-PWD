@@ -13,7 +13,8 @@ In this application person can speak different HTML tags or CSS properties and c
 Просмотреть все команды можно непосредственно в приложении, сказав фразу: **Открыть подсказки** 
 ![hints](https://github.com/lulliz/Code-editor-for-PWD/blob/master/Hints.png)
 
-
+#Alpha Version
+[CEPWD](https://lulliz.github.io/Code-editor-for-PWD/)
 
 ##Credits
     1. Jquery ver 3.1.1
