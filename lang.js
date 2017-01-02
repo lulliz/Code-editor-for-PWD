@@ -73,6 +73,12 @@ $(document).ready(function() {
             'cancel': function() { 
                 editor.undo();
             },
+            'удалить строку': function() { 
+                editor.removeLines();
+            },
+            'удалить': function() { 
+                editor.remove();
+            },
             'вернуть': function() { 
                 editor.redo();
             },
